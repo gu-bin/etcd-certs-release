@@ -1,0 +1,15 @@
+---
+name: put_etcd_certs
+
+templates:
+  config/etcd.crt.erb: containers/calico_node/etcd.crt
+  config/etcd.key.erb: containers/calico_node/etcd.key
+  config/etcd-ca.crt.erb: containers/calico_node/etcd-ca.crt
+
+properties:
+  tls.etcd.ca:
+    description: CA for etcd client and server authentication
+  tls.etcd.certificate:
+    description: Certificate for etcd client and server authentication
+  tls.etcd.private_key:
+    description: Private key for etcd client and server authentication
